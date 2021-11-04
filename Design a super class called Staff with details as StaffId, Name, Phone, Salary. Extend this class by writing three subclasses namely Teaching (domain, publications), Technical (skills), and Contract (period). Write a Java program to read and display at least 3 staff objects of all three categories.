@@ -1,0 +1,71 @@
+package program2;
+
+class Staff{
+	
+	private int sid;
+	private String name,phone;
+	private double sal;
+	
+	public Staff(int stfid, String stfname, String stfphone, double stfsal) {
+		sid = stfid;
+		name = stfname;
+		phone = stfphone;
+		sal = stfsal;
+	}
+	public void display() {
+		System.out.print(sid+"\t"+name+"\t"+phone+"\t"+sal);
+	}
+}
+class Teaching extends Staff {
+	
+	String domain;
+	int publications;
+	
+	Teaching(int id, String n, String ph, double sal, String dom, int pub){
+		super(id,n,ph,sal);
+		domain = dom;
+		publications = pub;
+	}
+	public void display() {
+		super.display();
+		System.out.println("\t"+domain+"\t"+publications);
+	}
+}
+class Technical extends Staff {
+	String skill;
+	
+	Technical(int id, String n, String ph, double sal, String skil){
+	super(id,n,ph,sal);
+	skill = skil;
+	}
+	public void display() {
+		super.display();
+		System.out.println("\t\t\t\t\t "+skill);
+	}
+}
+class Contract extends Staff {
+	int period;
+	
+	Contract(int id, String n, String ph, double sal, int per){
+		super(id,n,ph,sal);
+		period = per;
+	}
+	public void display() {
+		super.display();
+		System.out.println("\t\t\t\t\t\t "+period);
+	}
+}
+public class Prgm2A {
+
+	public static void main(String[] args) {
+		Staff s[] = new Staff[10];
+		s[0] = new Teaching(10,"Ram","9876543021",30000,"Computer Science",5);
+		s[1] = new Technical(20,"sham","9888890012",10000,"c++");
+		s[2] = new Contract(30,"Anu","9812347650",24000,2);
+		System.out.println("StaffId\tName\tPhone\t\tSalary\tDomain\t\tPublications\tSkill\tperiod");
+		for(int i=0;i<3;i++)
+			s[i].display();
+		
+	}
+
+}

@@ -1,0 +1,30 @@
+package program3;
+
+import java.util.*;
+
+public class prgm3A {
+	void fun(int a, int b)
+	{
+		float res;
+		
+		try
+		{
+			res = a/b;
+			System.out.println("The Result is :"+res);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Caught exception is :"+e);
+		}
+	}
+		
+	public static void main(String[] args) {
+		System.out.println("Enter two Numbers");
+		Scanner in = new Scanner(System.in);
+		int n1 = in.nextInt();
+		int n2 = in.nextInt();
+		prgm3A e1 = new prgm3A();
+		e1.fun(n1, n2);
+	}
+
+}
